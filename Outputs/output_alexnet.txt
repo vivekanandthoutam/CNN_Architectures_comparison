@@ -1,0 +1,333 @@
+(envi) C:\Users\16028\Downloads\archive (2)>python plant_disease_detection(1).py
+[INFO] Loading images ...
+[INFO] Processing Pepper__bell___Bacterial_spot ...
+[INFO] Processing Pepper__bell___healthy ...
+[INFO] Processing Potato___Early_blight ...
+[INFO] Processing Potato___healthy ...
+[INFO] Processing Potato___Late_blight ...
+[INFO] Processing Tomato_Bacterial_spot ...
+[INFO] Processing Tomato_Early_blight ...
+[INFO] Processing Tomato_healthy ...
+[INFO] Processing Tomato_Late_blight ...
+[INFO] Processing Tomato_Leaf_Mold ...
+[INFO] Processing Tomato_Septoria_leaf_spot ...
+[INFO] Processing Tomato_Spider_mites_Two_spotted_spider_mite ...
+[INFO] Processing Tomato__Target_Spot ...
+[INFO] Processing Tomato__Tomato_mosaic_virus ...
+[INFO] Processing Tomato__Tomato_YellowLeaf__Curl_Virus ...
+[INFO] Image loading completed
+['Pepper__bell___Bacterial_spot' 'Pepper__bell___healthy'
+ 'Potato___Early_blight' 'Potato___Late_blight' 'Potato___healthy'
+ 'Tomato_Bacterial_spot' 'Tomato_Early_blight' 'Tomato_Late_blight'
+ 'Tomato_Leaf_Mold' 'Tomato_Septoria_leaf_spot'
+ 'Tomato_Spider_mites_Two_spotted_spider_mite' 'Tomato__Target_Spot'
+ 'Tomato__Tomato_YellowLeaf__Curl_Virus' 'Tomato__Tomato_mosaic_virus'
+ 'Tomato_healthy']
+[INFO] Spliting data to train, test
+2022-12-09 16:08:09.473676: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ conv2d (Conv2D)             (None, 54, 54, 96)        34944
+
+ max_pooling2d (MaxPooling2D  (None, 27, 27, 96)       0
+ )
+
+ batch_normalization (BatchN  (None, 27, 27, 96)       384
+ ormalization)
+
+ conv2d_1 (Conv2D)           (None, 17, 17, 256)       2973952
+
+ max_pooling2d_1 (MaxPooling  (None, 8, 8, 256)        0
+ 2D)
+
+ batch_normalization_1 (Batc  (None, 8, 8, 256)        1024
+ hNormalization)
+
+ conv2d_2 (Conv2D)           (None, 6, 6, 384)         885120
+
+ batch_normalization_2 (Batc  (None, 6, 6, 384)        1536
+ hNormalization)
+
+ conv2d_3 (Conv2D)           (None, 4, 4, 384)         1327488
+
+ batch_normalization_3 (Batc  (None, 4, 4, 384)        1536
+ hNormalization)
+
+ conv2d_4 (Conv2D)           (None, 2, 2, 256)         884992
+
+ max_pooling2d_2 (MaxPooling  (None, 1, 1, 256)        0
+ 2D)
+
+ batch_normalization_4 (Batc  (None, 1, 1, 256)        1024
+ hNormalization)
+
+ flatten (Flatten)           (None, 256)               0
+
+ dense (Dense)               (None, 4096)              1052672
+
+ dropout (Dropout)           (None, 4096)              0
+
+ batch_normalization_5 (Batc  (None, 4096)             16384
+ hNormalization)
+
+ dense_1 (Dense)             (None, 4096)              16781312
+
+ dropout_1 (Dropout)         (None, 4096)              0
+
+ batch_normalization_6 (Batc  (None, 4096)             16384
+ hNormalization)
+
+ dense_2 (Dense)             (None, 1000)              4097000
+
+ dropout_2 (Dropout)         (None, 1000)              0
+
+ batch_normalization_7 (Batc  (None, 1000)             4000
+ hNormalization)
+
+ dense_3 (Dense)             (None, 38)                38038
+
+=================================================================
+Total params: 28,117,790
+Trainable params: 28,096,654
+Non-trainable params: 21,136
+_________________________________________________________________
+Model: "sequential_1"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ conv2d (Conv2D)             (None, 54, 54, 96)        34944
+
+ max_pooling2d (MaxPooling2D  (None, 27, 27, 96)       0
+ )
+
+ batch_normalization (BatchN  (None, 27, 27, 96)       384
+ ormalization)
+
+ conv2d_1 (Conv2D)           (None, 17, 17, 256)       2973952
+
+ max_pooling2d_1 (MaxPooling  (None, 8, 8, 256)        0
+ 2D)
+
+ batch_normalization_1 (Batc  (None, 8, 8, 256)        1024
+ hNormalization)
+
+ conv2d_2 (Conv2D)           (None, 6, 6, 384)         885120
+
+ batch_normalization_2 (Batc  (None, 6, 6, 384)        1536
+ hNormalization)
+
+ conv2d_3 (Conv2D)           (None, 4, 4, 384)         1327488
+
+ batch_normalization_3 (Batc  (None, 4, 4, 384)        1536
+ hNormalization)
+
+ conv2d_4 (Conv2D)           (None, 2, 2, 256)         884992
+
+ max_pooling2d_2 (MaxPooling  (None, 1, 1, 256)        0
+ 2D)
+
+ batch_normalization_4 (Batc  (None, 1, 1, 256)        1024
+ hNormalization)
+
+ flatten (Flatten)           (None, 256)               0
+
+ dense (Dense)               (None, 4096)              1052672
+
+ dropout (Dropout)           (None, 4096)              0
+
+ batch_normalization_5 (Batc  (None, 4096)             16384
+ hNormalization)
+
+ dense_1 (Dense)             (None, 4096)              16781312
+
+ dropout_1 (Dropout)         (None, 4096)              0
+
+ batch_normalization_6 (Batc  (None, 4096)             16384
+ hNormalization)
+
+ dense_2 (Dense)             (None, 1000)              4097000
+
+ dropout_2 (Dropout)         (None, 1000)              0
+
+ batch_normalization_7 (Batc  (None, 1000)             4000
+ hNormalization)
+
+=================================================================
+Total params: 28,079,752
+Trainable params: 28,058,616
+Non-trainable params: 21,136
+_________________________________________________________________
+Model: "sequential_1"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ conv2d (Conv2D)             (None, 54, 54, 96)        34944
+
+ max_pooling2d (MaxPooling2D  (None, 27, 27, 96)       0
+ )
+
+ batch_normalization (BatchN  (None, 27, 27, 96)       384
+ ormalization)
+
+ conv2d_1 (Conv2D)           (None, 17, 17, 256)       2973952
+
+ max_pooling2d_1 (MaxPooling  (None, 8, 8, 256)        0
+ 2D)
+
+ batch_normalization_1 (Batc  (None, 8, 8, 256)        1024
+ hNormalization)
+
+ conv2d_2 (Conv2D)           (None, 6, 6, 384)         885120
+
+ batch_normalization_2 (Batc  (None, 6, 6, 384)        1536
+ hNormalization)
+
+ conv2d_3 (Conv2D)           (None, 4, 4, 384)         1327488
+
+ batch_normalization_3 (Batc  (None, 4, 4, 384)        1536
+ hNormalization)
+
+ conv2d_4 (Conv2D)           (None, 2, 2, 256)         884992
+
+ max_pooling2d_2 (MaxPooling  (None, 1, 1, 256)        0
+ 2D)
+
+ batch_normalization_4 (Batc  (None, 1, 1, 256)        1024
+ hNormalization)
+
+ flatten (Flatten)           (None, 256)               0
+
+ dense (Dense)               (None, 4096)              1052672
+
+ dropout (Dropout)           (None, 4096)              0
+
+ batch_normalization_5 (Batc  (None, 4096)             16384
+ hNormalization)
+
+ dense_1 (Dense)             (None, 4096)              16781312
+
+ dropout_1 (Dropout)         (None, 4096)              0
+
+ batch_normalization_6 (Batc  (None, 4096)             16384
+ hNormalization)
+
+ dense_2 (Dense)             (None, 1000)              4097000
+
+ dropout_2 (Dropout)         (None, 1000)              0
+
+ batch_normalization_7 (Batc  (None, 1000)             4000
+ hNormalization)
+
+ dense_4 (Dense)             (None, 15)                15015
+
+=================================================================
+Total params: 28,094,767
+Trainable params: 28,073,631
+Non-trainable params: 21,136
+_________________________________________________________________
+[INFO] training network...
+Epoch 1/25
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 5). These functions will not be directly callable after loading.
+22/22 - 76s - loss: 1.4038 - accuracy: 0.5763 - val_loss: 1.3551 - val_accuracy: 0.6197 - 76s/epoch - 3s/step
+Epoch 2/25
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 5). These functions will not be directly callable after loading.
+22/22 - 80s - loss: 0.6133 - accuracy: 0.8095 - val_loss: 1.0761 - val_accuracy: 0.7073 - 80s/epoch - 4s/step
+Epoch 3/25
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 5). These functions will not be directly callable after loading.
+22/22 - 84s - loss: 0.4369 - accuracy: 0.8564 - val_loss: 1.0552 - val_accuracy: 0.7291 - 84s/epoch - 4s/step
+Epoch 4/25
+22/22 - 83s - loss: 0.3771 - accuracy: 0.8754 - val_loss: 1.1705 - val_accuracy: 0.7073 - 83s/epoch - 4s/step
+Epoch 5/25
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 5). These functions will not be directly callable after loading.
+22/22 - 92s - loss: 0.3376 - accuracy: 0.8836 - val_loss: 0.7259 - val_accuracy: 0.8016 - 92s/epoch - 4s/step
+Epoch 6/25
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 5). These functions will not be directly callable after loading.
+22/22 - 91s - loss: 0.2688 - accuracy: 0.9033 - val_loss: 0.6539 - val_accuracy: 0.8098 - 91s/epoch - 4s/step
+Epoch 7/25
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 5). These functions will not be directly callable after loading.
+22/22 - 92s - loss: 0.2485 - accuracy: 0.9184 - val_loss: 0.5049 - val_accuracy: 0.8536 - 92s/epoch - 4s/step
+Epoch 8/25
+22/22 - 92s - loss: 0.2431 - accuracy: 0.9169 - val_loss: 0.6022 - val_accuracy: 0.8454 - 92s/epoch - 4s/step
+Epoch 9/25
+22/22 - 90s - loss: 0.2531 - accuracy: 0.9112 - val_loss: 0.5655 - val_accuracy: 0.8263 - 90s/epoch - 4s/step
+Epoch 10/25
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 5). These functions will not be directly callable after loading.
+22/22 - 94s - loss: 0.2315 - accuracy: 0.9194 - val_loss: 0.3250 - val_accuracy: 0.9015 - 94s/epoch - 4s/step
+Epoch 11/25
+22/22 - 93s - loss: 0.2001 - accuracy: 0.9366 - val_loss: 1.6613 - val_accuracy: 0.6676 - 93s/epoch - 4s/step
+Epoch 12/25
+22/22 - 94s - loss: 0.1745 - accuracy: 0.9388 - val_loss: 1.0163 - val_accuracy: 0.7250 - 94s/epoch - 4s/step
+Epoch 13/25
+22/22 - 97s - loss: 0.1663 - accuracy: 0.9438 - val_loss: 0.7075 - val_accuracy: 0.8112 - 97s/epoch - 4s/step
+Epoch 14/25
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 5). These functions will not be directly callable after loading.
+22/22 - 100s - loss: 0.1509 - accuracy: 0.9495 - val_loss: 0.2643 - val_accuracy: 0.9248 - 100s/epoch - 5s/step
+Epoch 15/25
+22/22 - 104s - loss: 0.1600 - accuracy: 0.9434 - val_loss: 0.2916 - val_accuracy: 0.9124 - 104s/epoch - 5s/step
+Epoch 16/25
+22/22 - 104s - loss: 0.1349 - accuracy: 0.9549 - val_loss: 0.3778 - val_accuracy: 0.8960 - 104s/epoch - 5s/step
+Epoch 17/25
+22/22 - 103s - loss: 0.1298 - accuracy: 0.9578 - val_loss: 0.3407 - val_accuracy: 0.9097 - 103s/epoch - 5s/step
+Epoch 18/25
+22/22 - 100s - loss: 0.1487 - accuracy: 0.9499 - val_loss: 0.3548 - val_accuracy: 0.9056 - 100s/epoch - 5s/step
+Epoch 19/25
+22/22 - 102s - loss: 0.1203 - accuracy: 0.9574 - val_loss: 0.4603 - val_accuracy: 0.8851 - 102s/epoch - 5s/step
+Epoch 20/25
+22/22 - 103s - loss: 0.1353 - accuracy: 0.9542 - val_loss: 0.5840 - val_accuracy: 0.8536 - 103s/epoch - 5s/step
+Epoch 21/25
+22/22 - 105s - loss: 0.1410 - accuracy: 0.9520 - val_loss: 0.4850 - val_accuracy: 0.8851 - 105s/epoch - 5s/step
+Epoch 22/25
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 5). These functions will not be directly callable after loading.
+22/22 - 105s - loss: 0.1232 - accuracy: 0.9563 - val_loss: 0.2528 - val_accuracy: 0.9289 - 105s/epoch - 5s/step
+Epoch 23/25
+22/22 - 97s - loss: 0.1233 - accuracy: 0.9603 - val_loss: 0.3374 - val_accuracy: 0.9111 - 97s/epoch - 4s/step
+Epoch 24/25
+WARNING:absl:Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 5). These functions will not be directly callable after loading.
+22/22 - 103s - loss: 0.1147 - accuracy: 0.9624 - val_loss: 0.2394 - val_accuracy: 0.9343 - 103s/epoch - 5s/step
+Epoch 25/25
+22/22 - 99s - loss: 0.1184 - accuracy: 0.9560 - val_loss: 0.8449 - val_accuracy: 0.7989 - 99s/epoch - 4s/step
+[INFO] Calculating model accuracy
+21/21 [==============================] - 4s 168ms/step - loss: 0.0924 - accuracy: 0.9753
+Test Accuracy: 97.52704501152039
+15/15 [==============================] - 3s 165ms/step - loss: 0.0779 - accuracy: 0.9733
+Test Accuracy: 97.33333587646484
+15/15 [==============================] - 3s 165ms/step
+[[30  0  0  0  0  0  0  0  0  0  0  0  0  0  0]
+ [ 0 30  0  0  0  0  0  0  0  0  0  0  0  0  0]
+ [ 1  0 28  0  0  0  0  0  0  1  0  0  0  0  0]
+ [ 0  0  0 30  0  0  0  0  0  0  0  0  0  0  0]
+ [ 0  0  0  0 30  0  0  0  0  0  0  0  0  0  0]
+ [ 0  0  0  0  0 30  0  0  0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  1 28  0  0  0  0  0  1  0  0]
+ [ 0  0  0  0  0  1  1 25  2  1  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0  0 30  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0  0  0 30  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0  0  0  0 30  0  0  0  0]
+ [ 0  0  0  0  0  0  0  0  0  0  1 29  0  0  0]
+ [ 0  0  0  0  0  2  0  0  0  0  0  0 28  0  0]
+ [ 0  0  0  0  0  0  0  0  0  0  0  0  0 30  0]
+ [ 0  0  0  0  0  0  0  0  0  0  0  0  0  0 30]]
+              precision    recall  f1-score   support
+
+     class 0       0.97      1.00      0.98        30
+     class 1       1.00      1.00      1.00        30
+     class 2       1.00      0.93      0.97        30
+     class 3       1.00      1.00      1.00        30
+     class 4       1.00      1.00      1.00        30
+     class 5       0.88      1.00      0.94        30
+     class 6       0.97      0.93      0.95        30
+     class 7       1.00      0.83      0.91        30
+     class 8       0.94      1.00      0.97        30
+     class 9       0.94      1.00      0.97        30
+    class 10       0.97      1.00      0.98        30
+    class 11       1.00      0.97      0.98        30
+    class 12       0.97      0.93      0.95        30
+    class 13       1.00      1.00      1.00        30
+    class 14       1.00      1.00      1.00        30
+
+    accuracy                           0.97       450
+   macro avg       0.97      0.97      0.97       450
+weighted avg       0.97      0.97      0.97       450
